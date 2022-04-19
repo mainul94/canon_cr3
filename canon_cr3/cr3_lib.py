@@ -25,6 +25,9 @@ along with cannon_cr3. If not, see <http://www.gnu.org/licenses/>.
 from struct import unpack, Struct
 from binascii import unhexlify, hexlify
 
+def getLongBE(d, a):
+    return unpack('>L',(d)[a:a+4])[0]
+
 class Cr3FileParser:
 
     def __init__(self, filepath):
